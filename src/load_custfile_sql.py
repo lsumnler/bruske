@@ -1,3 +1,7 @@
+# This program the binary customer file to a MySql file
+# The program calls the WangCovert module to convert
+#    the ASCII packed decimal fields to decimal
+
 import MySQLdb
 import WangConvert
 
