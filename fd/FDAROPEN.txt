@@ -1,0 +1,44 @@
+000100*** PCS MODS ****************************************************
+000200 FD  AR-OPEN-ITEM-FILE
+000300
+000400     LABEL RECORDS ARE STANDARD
+000500*** PCS MODS ****************************************************
+000600     RECORD CONTAINS 98 COMPRESSED CHARACTERS                     100892LS
+000700*****************************************************************
+000800     DATA RECORD  IS AR-OPEN-ITEM-RECORD
+000900     VALUE OF
+001000         FILENAME IS "AROPNFIL"
+001100         VOLUME   IS AR-AROPNFIL-FILE-VOLUME
+001200         SPACE    IS AR-OPEN-ITEM-FILE-SPACE.
+001300
+001400 01  AR-OPEN-ITEM-RECORD.
+001500
+001600     03  AR-OPEN-KEY.
+001700         05  AR-OPEN-CUSTOMER-NO             PIC X(6).
+001800         05  AR-OPEN-DOCUMENT-DATE.
+001900             07  AR-OPEN-DOCUMENT-YEAR       PIC 9(2).
+002000             07  AR-OPEN-DOCUMENT-MONTH      PIC 9(2).
+002100             07  AR-OPEN-DOCUMENT-DAY        PIC 9(2).
+002200         05  AR-OPEN-ALT-KEY-2.                                   072690LS
+002300             10  AR-OPEN-DOCUMENT-NO         PIC 9(6).            072690LS
+002400         05  AR-OPEN-DOCUMENT-TYPE           PIC X(1).
+002500         05  AR-OPEN-APPLY-TO-NO             PIC 9(6).
+002600
+002700     03  AR-OPEN-ALTERNATE-KEY.
+002800         05  AR-OPEN-CUSTOMER-NO-ALT         PIC X(6).
+002900         05  AR-OPEN-APPLY-TO-NO-ALT         PIC 9(6).
+003000
+003100     03  AR-OPEN-DOCUMENT-DUE-DATE.
+003200         05  AR-OPEN-DOCUMENT-DUE-YEAR       PIC 9(2).
+003300         05  AR-OPEN-DOCUMENT-DUE-MONTH      PIC 9(2).
+003400         05  AR-OPEN-DOCUMENT-DUE-DAY        PIC 9(2).
+003500
+003600     03  AR-OPEN-AMOUNT-1                    PIC S9(8)V99 COMP.
+003700     03  AR-OPEN-AMOUNT-2                    PIC S9(7)V99 COMP.
+003800     03  AR-OPEN-REFERENCE                   PIC X(30).
+003900*** PCS MODS ****************************************************
+004000     03  AR-OPEN-SALESMAN-NO                 PIC X(3).
+004100     03  AR-OPEN-SALESMAN-NO-2               PIC X(3).
+004200     03  AR-OPEN-SALESMAN-NO-3               PIC X(3).
+004300     03  AR-OPEN-AMOUNT-3                    PIC S9(7)V99 COMP.   100892LS
+004400*****************************************************************

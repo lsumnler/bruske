@@ -1,0 +1,91 @@
+000100*** PCS MODS *****************************************************
+000200 FD  CUSTOMER-FILE
+000300
+000400     LABEL RECORDS ARE STANDARD
+000500*** PCS MODS *****************************************************
+000600*    RECORD CONTAINS 311 COMPRESSED CHARACTERS
+000700     RECORD CONTAINS 477 COMPRESSED CHARACTERS
+000800******************************************************************
+000900     DATA RECORD  IS CUSTOMER-RECORD
+001000     VALUE OF
+001100         FILENAME IS "CUSTFILE"
+001200         VOLUME   IS AR-CUSTFILE-FILE-VOLUME
+001300         SPACE    IS CUSTOMER-FILE-SPACE.
+001400
+001500 01  CUSTOMER-RECORD.
+001600
+001700     03  CUSTOMER-KEY.
+001800         05  CUSTOMER-NO                     PIC X(6).
+001900
+002000     03  CUSTOMER-NAME                       PIC X(30).
+002100
+002200     03  CUSTOMER-ADDRESS.
+002300         05  CUSTOMER-STREET-1               PIC X(30).
+002400         05  CUSTOMER-STREET-2               PIC X(30).
+002500         05  CUSTOMER-CITY                   PIC X(15).
+002600         05  CUSTOMER-STATE                  PIC X(2).
+002700         05  CUSTOMER-ZIP-CODE               PIC X(10).
+002800         05  CUSTOMER-COUNTRY                PIC X(10).
+002900
+003000     03  CUSTOMER-TERRITORY                  PIC X(2).
+003100
+003200     03  CUSTOMER-CONTACT                    PIC X(20).
+003300     03  CUSTOMER-PHONE-NO                   PIC X(12).
+003400     03  CUSTOMER-SALESMAN                   PIC X(3).
+003500     03  CUSTOMER-TYPE                       PIC X(5).
+003600     03  CUSTOMER-BALANCE-METHOD             PIC X(1).
+003700     03  CUSTOMER-STATEMENT-FREQUENCY        PIC X(1).
+003800     03  CUSTOMER-CREDIT-STATUS              PIC X(1).
+003900     03  CUSTOMER-CREDIT-LIMIT               PIC 9(8) COMP.
+004000     03  CUSTOMER-CREDIT-RATING              PIC X(4).
+004100     03  CUSTOMER-ORDER-LIMIT                PIC 9(8) COMP.
+004200     03  CUSTOMER-FINANCE-CHARGE-FLAG        PIC X(1).
+004300*** PCS MODS *****************************************************
+004400*    03  CUSTOMER-SHIP-VIA-CODE              PIC X(1).
+004500     03  CUSTOMER-SHIP-VIA-CODE              PIC X(2).
+004600******************************************************************
+004700     03  CUSTOMER-DFLT-WAREHOUSE-LOCATN      PIC X(2).
+004800     03  CUSTOMER-FREIGHT-PAYMENT-CODE       PIC X(1).
+004900     03  CUSTOMER-PARTIAL-SHIPMENT-FLAG      PIC X(1).
+005000     03  CUSTOMER-TERMS-CODE                 PIC X(1).
+005100     03  CUSTOMER-DISCOUNT-PERCENT           PIC 9(2)V99  COMP.
+005200     03  CUSTOMER-TAX-CODE                   PIC X(3).
+005300     03  CUSTOMER-SALES-LAST-YEAR            PIC S9(9)V99 COMP.
+005400     03  CUSTOMER-SALES-PERIOD-TO-DATE       PIC S9(9)V99 COMP.
+005500     03  CUSTOMER-SALES-YEAR-TO-DATE         PIC S9(9)V99 COMP.
+005600     03  CUSTOMER-COST-PERIOD-TO-DATE        PIC S9(9)V99 COMP.
+005700     03  CUSTOMER-COST-YEAR-TO-DATE          PIC S9(9)V99 COMP.
+005800     03  CUSTOMER-COMM-PERIOD-TO-DATE        PIC S9(9)V99 COMP.
+005900     03  CUSTOMER-COMM-YEAR-TO-DATE          PIC S9(9)V99 COMP.
+006000     03  CUSTOMER-BALANCE                    PIC S9(8)V99 COMP.
+006100
+006200     03  CUSTOMER-CREDIT-HISTORY.
+006300         05  CUSTOMER-HIGHEST-BALANCE-DUE    PIC S9(8)V99 COMP.
+006400         05  CUSTOMER-HIGHEST-BALANCE-DATE   PIC 9(6).
+006500         05  CUSTOMER-LAST-PAYMENT-MADE      PIC S9(8)V99 COMP.
+006600         05  CUSTOMER-LAST-PAYMENT-DATE      PIC 9(6).
+006700         05  CUSTOMER-AVERAGE-TIME-TO-PAY    PIC 9(3) COMP.
+006800         05  CUSTOMER-NO-OF-INVOICES-PAID    PIC 9(2).
+006900
+007000     03  CUSTOMER-COMMENT                    PIC X(30).
+007100*** PCS MODS *****************************************************
+007200     03  CUSTOMER-VENDOR-NO                  PIC X(15).
+007300     03  CUST-LAST-INV-DATE                  PIC X(08).
+007400     03  CUST-LAST-INV-NO                    PIC X(06).
+007500     03  CUSTOMER-FED-TAX-NO                 PIC X(10).
+007600*** PCS MODS *****************************************************
+007700     03  CUSTOMER-COMMENT-2                  PIC X(30).
+007800     03  CUSTOMER-COMMENT-3                  PIC X(30).
+007900     03  CUSTOMER-FAX-NO                     PIC X(12).
+008000     03  CUSTOMER-CONTRACT                   PIC X(04).
+008100     03  CUSTOMER-RDG-INVOICE                PIC 9(6).
+008200     03  CUSTOMER-BLOT-IT-INVOICE            PIC 9(6).
+008300     03  CUST-PREV-INV-DATE                  PIC 9(6).            012990LS
+008400     03  CUST-PREV-INV-NO                    PIC X(06).           012990LS
+008500     03  CUST-SALARY-INV                     PIC 9(6).            072291LS
+008600     03  CUSTOMER-SKIM-IT-INVOICE            PIC 9(6).            072092LS
+008700     03  CUST-TERRITORY                      PIC X(3).            040603LS
+008800     03  CUST-SURVEY                         PIC X(1).            120107LS
+008900     03  CUSTOMER-CITY-COUNTY-TAX            PIC 9(7).            080708LS
+009000     03  FILLER                              PIC X(3).            080708LS
+009100*** PCS MODS *****************************************************
