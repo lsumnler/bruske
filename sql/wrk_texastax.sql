@@ -39,7 +39,7 @@ drop table if exists texasdtlrpt;
 drop table if exists texassumrpt;
 
 create table texasdtlrpt
-select "Texas Tax" as name, 0 as taxno, t.amt1, 0.06250 as taxpct, t.stateamt
+select "Texas Tax                     " as name, 0 as taxno, t.amt1, 0.06250 as taxpct, t.stateamt
 from texastax t;
 
 insert into texasdtlrpt (name, taxno, amt1, taxpct, stateamt)

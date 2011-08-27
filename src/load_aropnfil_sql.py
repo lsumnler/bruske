@@ -1,11 +1,8 @@
 
-import MySQLdb
+import sqlite3
 import WangConvert
 
-conn = MySQLdb.connect(host = 'localhost',
-                       user = 'root',
-                       passwd = 'cesare%05',
-                       db = 'texas_tax')
+conn = sqlite3.connect('/home/lenyel/bruske/bruske.db')
 
 cursor = conn.cursor()
 cursor.execute("delete from aropnfil")
@@ -38,13 +35,13 @@ aropnfil_len = 98
 aropnfil = WangConvert.WangFile('AROPNFIL.bin', path, aropnfil_fd, aropnfil_len)
 for i in aropnfil.yieldwangrec():
     rec = aropnfil.wangread(i)
-    aropnfil.list.extend([' '])
+    aropnfil.tuple = aropnfil.tuple + tuple(" ")
     fields = ', '.join(col_names)
     query = "insert into aropnfil (%s) values(" % fields
-    myvalues = '%s,'*(len(aropnfil.list)-1)+"%s)"
+    myvalues = '?,'*(len(aropnfil.tuple)-1)+"?)"
     thequery = query + myvalues
 
-    cursor.execute(thequery, tuple(aropnfil.list))
+    cursor.execute(thequery, aropnfil.tuple)
 
 conn.commit()
 conn.close()

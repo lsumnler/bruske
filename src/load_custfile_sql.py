@@ -2,13 +2,10 @@
 # The program calls the WangCovert module to convert
 #    the ASCII packed decimal fields to decimal
 
-import MySQLdb
+import sqlite3
 import WangConvert
 
-conn = MySQLdb.connect(host = 'localhost',
-                       user = 'root',
-                       passwd = 'cesare%05',
-                       db = 'texas_tax')
+conn = sqlite3.connect('/home/lenyel/bruske/bruske.db')
 
 cursor = conn.cursor()
 cursor.execute("delete from custfile")
@@ -88,10 +85,10 @@ for i in custfile.yieldwangrec():
     rec = custfile.wangread(i)
     fields = ', '.join(col_names)
     query = "insert into custfile (%s) values(" % fields
-    myvalues = '%s,'*(len(custfile.list)-1)+"%s)"
+    myvalues = '?,'*(len(custfile.tuple)-1)+"?)"
     thequery = query + myvalues
-
-    cursor.execute(thequery, tuple(custfile.list))
+    
+    cursor.execute(thequery, custfile.tuple)
 
 conn.commit()
 conn.close()

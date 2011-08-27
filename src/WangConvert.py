@@ -41,7 +41,7 @@ class WangFile(object):
             field_list.append(field)
             self.position += size
 
-        self.list = field_list
+        self.tuple = tuple(field_list)
 
 class Pdec:
     def __init__(self, packed_value, size, dec_places):
