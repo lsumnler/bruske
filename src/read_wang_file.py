@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+# *** This program is no longer needed.  It was used as a base to help
+#     create WangConvert.py
+
 # Date:     October 4, 2009
 # Author:   Len Sumnler
 # This program take a Wang ASCII binary file and converts the file one
@@ -25,7 +28,7 @@ class WangFile(object):
         while self.wang_rec:
             yield self.wang_rec
             self.wang_rec = self.wangfile_open.read(self.wang_rec_len)
-            
+
     def wangread(self,rec):
         self.position = 0
         field_list = []
@@ -54,13 +57,13 @@ class WangFile(object):
 class Pdec:
     def __init__(self, packed_value, size, dec_places):
         unpacked = ''
-     
+
         precision = (size * 2) - 1
         for byte in packed_value[:-1]:
             upper_bits, lower_bits = divmod(ord(byte), 16)
             unpacked = unpacked + (str(upper_bits))
             unpacked = unpacked + (str(lower_bits))
-            
+
         upper_bits, lower_bits = divmod(ord(packed_value[-1]), 16)
         unpacked = unpacked + (str(upper_bits))
 
@@ -74,7 +77,7 @@ class Pdec:
             unpacked = unpacked[0:precision - dec_places] + '.' \
             + unpacked[precision - dec_places:precision]
             unpacked = sign + unpacked[0:precision + 1].lstrip('0')
-        
+
         if unpacked == '':
             unpacked = 0
 
@@ -116,7 +119,7 @@ if __name__ == '__main__':
     ('slsmn3', 'Xstr', 3, 0),
     ('amt3', 'Pdec', 5, 2)
     ]
-    
+
     aropnfil_len = 98
 
     aropnfil = WangFile('AROPNFIL.bin', path, aropnfil_fd, aropnfil_len)
@@ -138,7 +141,7 @@ if __name__ == '__main__':
 
     conn.commit()
     conn.close()
-    
+
 
 
 

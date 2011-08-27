@@ -16,7 +16,7 @@ def fmtline(fieldline):
     dec = ''
     codeline = []
     if fieldline.count('COMP.') > 0:
-        left = fieldline[3].find('(') + 1 
+        left = fieldline[3].find('(') + 1
         right = fieldline[3].find(')')
         num = fieldline[3][left:right].lstrip()
         if fieldline[3].count('V'):
@@ -29,7 +29,7 @@ def fmtline(fieldline):
         type = 'Pdec'
     elif fieldline[3][0] in ('X', '9'):
         dec = 0
-        left = fieldline[3].find('(') + 1 
+        left = fieldline[3].find('(') + 1
         right = fieldline[3].find(')')
         size = int(fieldline[3][left:right].lstrip('0'))
         if fieldline[3][0] == 'X':
@@ -38,7 +38,7 @@ def fmtline(fieldline):
             type = 'Xint'
     else:
         dec = 0
-        left = fieldline[3].find('(') + 1 
+        left = fieldline[3].find('(') + 1
         right = fieldline[3].find(')')
         size = int(fieldline[3][left:right].lstrip('0'))
         if fieldline[3][0] == 'X':

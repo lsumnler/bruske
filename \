@@ -1,0 +1,100 @@
+Initial commit of the Bruske directory which contains the Texas Tax
+Report. 
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   .project
+#	modified:   .pydevproject
+#	copied:     data/ZCUSTFI.BIN -> FullBackup_MySql.sql
+#	new file:   bruske.db
+#	modified:   data/AROPNFIL.bin
+#	modified:   data/ZCUSTFI.BIN
+#	modified:   data/ZDETAIL.BIN
+#	modified:   data/cityrate.csv
+#	modified:   data/cityrate.fnm
+#	modified:   fd/FDAROPEN.txt
+#	modified:   fd/FDCUST.txt
+#	modified:   fd/aropnfil.fd
+#	modified:   fd/custfile.fd
+#	modified:   sql/aropnfil.sql
+#	modified:   sql/custfile.sql
+#	modified:   sql/load_aropnfil.sql
+#	modified:   sql/load_custfile.sql
+#	modified:   sql/load_taxcode.sql
+#	modified:   sql/taxcode.sql
+#	modified:   sql/update_taxcode.sql
+#	modified:   sql/wrk_texastax.sql
+#	new file:   sql/wrk_texastax.sql~
+#	new file:   src/.idea/dictionaries/lenyel.xml
+#	new file:   src/.idea/encodings.xml
+#	new file:   src/.idea/misc.xml
+#	new file:   src/.idea/modules.xml
+#	new file:   src/.idea/src.iml
+#	new file:   src/.idea/vcs.xml
+#	new file:   src/.idea/workspace.xml
+#	new file:   src/HelloWorld.py
+#	new file:   src/MySQLdb
+#	new file:   src/Texas_Tax_Rpt.pdf
+#	new file:   src/WangConvert
+#	modified:   src/WangConvert.py
+#	modified:   src/WangConvert.pyc
+#	modified:   src/convert_fd.py
+#	new file:   src/link_list.py
+#	modified:   src/load_aropnfil_sql.py
+#	modified:   src/load_custfile_sql.py
+#	modified:   src/load_taxcode.py
+#	modified:   src/read_wang_file.py
+#	new file:   src/texas_rpt.py
+#	new file:   src/texas_tax.wpr
+#	modified:   src/update_aropnfil_tax.py
+#	new file:   texas_tax.odb
+#	new file:   x
+#
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    data/CHRTNEW.BIN
+#	deleted:    data/Texas Sales Tax.mm
+#	deleted:    data/TexasTax.ods
+#	deleted:    data/TexasTax.xls
+#	deleted:    data/ZITEM.BIN
+#	deleted:    data/ZMGR.BIN
+#	deleted:    data/ZOPEN.BIN
+#	deleted:    data/ZORDHDR.BIN
+#	deleted:    data/ZORDLIN.BIN
+#	deleted:    data/ZPRICE.BIN
+#	deleted:    data/ZSHIPTO.BIN
+#	deleted:    data/aropnfil.csv
+#	deleted:    data/custfile.csv
+#	deleted:    data/profile_20090923_0949.sql
+#	deleted:    data/test.odb
+#	deleted:    data/texas_tax.kexi
+#	deleted:    data/texastax.csv
+#	deleted:    report/Texas_Tax0809.csv
+#	deleted:    report/Texas_Tax0809.ods
+#	deleted:    report/Texas_Tax0809.pdf
+#	deleted:    report/page0001.jpeg
+#	deleted:    report/page0002.jpeg
+#	deleted:    report/page0003.jpeg
+#	deleted:    report/texas_tax.zip
+#	deleted:    report/texastax0109.ods
+#	deleted:    report/texastax0109.pdf
+#	deleted:    report/texastax11.csv
+#	deleted:    report/texastax11.ods
+#	deleted:    report/texastax12.ods
+#	deleted:    report/texastax12.pdf
+#	deleted:    src/classtesting.py
+#	deleted:    src/load_aropnfil.py
+#	deleted:    src/load_aropnfil_sql.py~
+#	deleted:    src/load_custfile.py
+#	deleted:    src/load_custfile_sql.py~
+#	deleted:    src/read_wang_file.py~
+#	deleted:    src/test_mysql.py
+#	deleted:    src/test_mysql.py~
+#	deleted:    src/update
+#	deleted:    src/update_aropnfil_tax.py~
+#

@@ -1,4 +1,7 @@
 #!/usr/bin/python
+
+# This module contains class objects used for converting Wang flat
+# ASSCI file into the Sqlite3 database.
 import time
 
 class WangFile(object):
@@ -17,7 +20,7 @@ class WangFile(object):
         while self.wang_rec:
             yield self.wang_rec
             self.wang_rec = self.wangfile_open.read(self.wang_rec_len)
-            
+
     def wangread(self,rec):
         self.position = 0
         field_list = []
@@ -46,13 +49,13 @@ class WangFile(object):
 class Pdec:
     def __init__(self, packed_value, size, dec_places):
         unpacked = ''
-     
+
         precision = (size * 2) - 1
         for byte in packed_value[:-1]:
             upper_bits, lower_bits = divmod(ord(byte), 16)
             unpacked = unpacked + (str(upper_bits))
             unpacked = unpacked + (str(lower_bits))
-            
+
         upper_bits, lower_bits = divmod(ord(packed_value[-1]), 16)
         unpacked = unpacked + (str(upper_bits))
 
@@ -66,7 +69,7 @@ class Pdec:
             unpacked = unpacked[0:precision - dec_places] + '.' \
             + unpacked[precision - dec_places:precision]
             unpacked = sign + unpacked[0:precision + 1].lstrip('0')
-        
+
         if unpacked == '':
             unpacked = 0
 
