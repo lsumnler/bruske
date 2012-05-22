@@ -1,0 +1,60 @@
+import MySQLdb
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.units import inch, cm
+
+conn = MySQLdb.connect(host = 'localhost',
+                       user = 'root',
+                       passwd = 'cesare05',
+                       db = 'texas_tax')
+
+cursor = conn.cursor()
+cursor.execute('select * from texassumrpt')
+data = cursor.fetchall()
+
+def taxtotal(tt,totrec):
+    tt.drawString(18, 556, totrec[0])
+    tt.drawString(198, 556, str(totrec[1]))
+    tt.drawRightString(410, 556, str(int(totrec[2])))
+    tt.drawString(432, 556, str(totrec[3]))
+    taxamt = round(int(totrec[2]) * totrec[3],2)
+    print taxamt
+    tt.drawRightString(585, 556, str(taxamt))
+
+def taxline(tt,detail):
+    i = 0
+    tottaxamt = 0
+    while i < len(detail):
+        tt.drawString(18, 556-(24*i), detail[i][0])
+        tt.drawString(198, 556-(24*i), str(detail[i][1]))
+        tt.drawRightString(410, 556-(24*i), str(int(detail[i][2])))
+        tt.drawString(432, 556-(24*i), str(detail[i][3]))
+        taxamt = round(int(detail[i][2]) * detail[i][3],2)
+        tt.drawRightString(585, 556-(24*i), str(taxamt))
+        tottaxamt += taxamt
+        i += 1
+    tt.drawRightString(475, 46, str(tottaxamt))
+tt = canvas.Canvas("Texas_Tax_Rpt.pdf", pagesize=letter)
+width, height = letter
+
+reccnt = len(data)
+pagecnt = (reccnt -1) / 20
+if (reccnt - 1) % 20 > 0:
+    pagecnt += 1
+
+taxtotal(tt,data[0])
+tt.showPage()
+
+recidx = 1
+page = 20
+while recidx < reccnt:
+    detail = data[recidx:page + 1]
+    taxline(tt,detail)
+    tt.showPage()
+    recidx += 20
+    if page + 20 > reccnt:
+        page = reccnt
+    else:
+        page += 20
+
+tt.save()

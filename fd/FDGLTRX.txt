@@ -1,0 +1,30 @@
+000100                                                                          
+000200 FD  GENERAL-LEDGER-TRX-FILE                                              
+000300                                                                          
+000400     LABEL RECORDS ARE STANDARD                                           
+000500***** CHANGE THIS LINE - CHANGE 76 TO 77 ********** DLC 3/87 *****        
+000600     RECORD CONTAINS 77 COMPRESSED CHARACTERS                             
+000700******************************************************************        
+000800     DATA RECORD IS GENERAL-LEDGER-TRX-RECORD                             
+000900     VALUE OF                                                             
+001000         FILENAME IS "GLTRXFIL"                                           
+001100         VOLUME IS GLTRXFIL-VOLUME                                        
+001200         SPACE IS GENERAL-LEDGER-TRX-FILE-SPACE.                          
+001300                                                                          
+001400 01  GENERAL-LEDGER-TRX-RECORD.                                           
+001500                                                                          
+001600     03 GL-TRX-KEY.                                                       
+001700                                                                          
+001800         05 GL-TRX-ACCOUNT-NO            PIC X(21).                       
+001900                                                                          
+002000         05 GL-TRX-DATE                  PIC 9(6).                        
+002100         05 GL-TRX-TIME                  PIC 9(6).                        
+002200                                                                          
+002300***** DELETE THIS LINE **************************** DLC 3/87 *****        
+002400*    03 GL-TRX-AMOUNT                    PIC S9(8)V99 COMP.               
+002500***** ADD THIS LINE ******************************* DLC 3/87 *****        
+002600     03 GL-TRX-AMOUNT                    PIC S9(11)V99 COMP.              
+002700******************************************************************        
+002800     03 GL-TRX-SOURCE                    PIC X(6).                        
+002900     03 GL-TRX-REFERENCE                 PIC X(30).                       
+003000     03 GL-TRX-CONSOLIDATION-CODE        PIC X(1).                        

@@ -1,0 +1,10 @@
+gltrxfil = [
+('gl_trx_account_no', 'Xstr', 21, 0),
+('gl_trx_date', 'Xint', 6, 0),
+('gl_trx_time', 'Xint', 6, 0),
+('gl_trx_amount', 'Pdec', 7, 2),
+('gl_trx_source', 'Xstr', 6, 0),
+('gl_trx_reference', 'Xstr', 30, 0),
+('gl_trx_consolidation_code', 'Xstr', 1, 0)
+]
+gltrxfil_len = 77
